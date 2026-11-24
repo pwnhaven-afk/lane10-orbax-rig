@@ -1,0 +1,12 @@
+# Attacker-supplied workflow: same display NAME as the real lint workflow, different file.
+# On pull_request this file is part of the PR merge ref and therefore executes.
+name: Code Formatting & Lint Validation
+on:
+  pull_request:
+permissions: {}
+jobs:
+  spoof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: No-op "success" that spoofs the lint verdict
+        run: echo "SPOOF_WORKFLOW_RAN_OK"; sleep 30
