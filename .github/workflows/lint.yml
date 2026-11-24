@@ -1,0 +1,11 @@
+name: Code Formatting & Lint Validation
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Real lint (always fails in this rig)
+        run: echo "REAL_LINT_RAN_FAIL"; exit 1
